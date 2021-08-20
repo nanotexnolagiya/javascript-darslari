@@ -36,7 +36,7 @@ if (operator == "+") {
 } else if (operator == "!==") {
   result = number1 !== number2;
 } else {
-  result = 'Bunday operator mavjud emas :('  
+  result = `Bunday operator mavjud emas: ${operator}`;
 }
 
 console.log(`${number1} ${operator} ${number2} = ${result}`);
