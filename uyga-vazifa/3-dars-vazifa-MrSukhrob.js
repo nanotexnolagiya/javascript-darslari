@@ -27,7 +27,19 @@ const calculateAction = function () {
             result = number1 < number2;
             break;
         case '!=':
-            result = number1 < number2;
+            result = number1 != number2;
+            break;
+        case '**':
+            result = number1 ** number2;
+            break;
+        case '%':
+            result = number1 % number2;
+            break;
+        case '==':
+            result = number1 == number2;
+            break;
+        case '===':
+            result = number1 === number2;
             break;
         default:
             return null;
@@ -45,8 +57,8 @@ const printToConsole = function () {
 
 function Calculator(number1, number2, operator) {
     this.number1 = number1,
-    this.number2 = number2,
-    this.operator = operator
+        this.number2 = number2,
+        this.operator = operator
 }
 
 Calculator.prototype.result = calculateAction;
