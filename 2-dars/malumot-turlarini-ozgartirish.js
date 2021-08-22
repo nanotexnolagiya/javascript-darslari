@@ -6,7 +6,9 @@ const age = 12;
 const none = null;
 const bool = false;
 const ageString = `${age}`;
-const boolString = String(bool)
+const boolString = String(bool);
+
+console.log('3' + '12') // 312
 
 console.log(typeof age, typeof ageString, boolString, ageString);
 console.log(`${none}`);
@@ -23,6 +25,7 @@ console.log(typeof year, typeof yearNumber)
 
 // Boolean
 const month = 1;
-// 0, null, undefined, '', NaN
+// 0, null, undefined, '', NaN, false
+// {} [Object object]
 
 console.log(Boolean(month), !!month)
