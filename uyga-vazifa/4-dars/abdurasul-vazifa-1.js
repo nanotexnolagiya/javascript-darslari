@@ -32,4 +32,6 @@ function char_to_int(character) {
   }
 }
 
-console.log(romanToArabic('XXML'));
+// console.log(romanToArabic('XXML'));
+
+module.exports = romanToArabic
