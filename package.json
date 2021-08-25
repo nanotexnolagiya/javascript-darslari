@@ -1,0 +1,23 @@
+{
+  "name": "javascript-darslari",
+  "version": "0.0.1",
+  "description": "Online JavaScript darslari",
+  "main": "index.js",
+  "scripts": {
+    "show": "node ./5-dars/add.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanotexnolagiya/javascript-darslari.git"
+  },
+  "author": "Islom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nanotexnolagiya/javascript-darslari/issues"
+  },
+  "homepage": "https://github.com/nanotexnolagiya/javascript-darslari#readme",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
