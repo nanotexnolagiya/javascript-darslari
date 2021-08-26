@@ -128,9 +128,67 @@ class CheckObjectPropertyTotalValue {
 
 }
 
+class ClonningObjects {
+    constructor(){
+        this.person = {}
+    }
+
+    taskInfo() {
+        /**
+         * 4.  
+         * let user = {
+         *  name: "Ali",
+         *  age: 20,
+         *  book: {
+         *    author: "Tohir Malik",
+         *    title: "Shaytanat",
+         *    city: {
+         *      name: "Tashkent",
+         *      population: 2545159,
+         *      region: {
+         *        name: "Yunusobod"
+         *      },
+         *      regions: ["Olmazor", "Yunusobod", "Mirzo Ulugbek"]
+         *    },
+         *    dateOfBirth: {
+         *      year: 1946,
+         *      day: 27,
+         *      month: "december",
+         *      date: Date(12.27.1946)
+         *    }
+         *  },
+         *  showAuthorRegion() {
+         *    console.log(this.book.city.region.name)
+         *  }
+         * }
+         * 
+         * shu userni deep clone qiladigan funksiya yarating " for..in " operatorlari orqali!
+         * 
+         * Masalan: 
+         * let user2 = deepClone(user)
+         * user2.book.city.region.name = "Mirobod"
+         * 
+         * user.showAuthorRegion() => Yunusobod
+         * 
+         **/
+    }
+
+    deepClone(object) {
+        for(let user in object){
+            if(typeof object[user] === 'object'){
+                return this.deepClone(object[user])
+            }
+            this.person.user = object[user]
+        } 
+        
+        return this.person
+    }
+
+}
 
 module.exports = {
     CheckObjectProperty,
     CalcObjectPropertiesValue,
-    CheckObjectPropertyTotalValue
+    CheckObjectPropertyTotalValue,
+    ClonningObjects
 }

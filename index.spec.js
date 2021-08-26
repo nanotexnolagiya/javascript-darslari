@@ -74,15 +74,57 @@ describe("CHECK OBJECT PROPERTY TOTALVALUE: ", () => {
     let checkerTotalValue = new CheckObjectPropertyTotalValue();
 
     test("TOTALVALUE IS: {totalValue: 5} => TRUE", () => {
-        expect(checkerTotalValue.check({totalValue: 5})).toBe(true)
+        expect(checkerTotalValue.check({
+            totalValue: 5
+        })).toBe(true)
     })
     test("TOTALVALUE IS: {totalValue: TRUE} => FALSE", () => {
-        expect(checkerTotalValue.check({totalValue: true})).toBe(false)
+        expect(checkerTotalValue.check({
+            totalValue: true
+        })).toBe(false)
     })
     test("TOTALVALUE IS: {totalValue: '5'} => TRUE", () => {
-        expect(checkerTotalValue.check({totalValue: '5'})).toBe(true)
+        expect(checkerTotalValue.check({
+            totalValue: '5'
+        })).toBe(true)
     })
     test("TOTALVALUE IS: {totalValue: 'true'} => TRUE", () => {
-        expect(checkerTotalValue.check({totalValue: 'true'})).toBe(false)
+        expect(checkerTotalValue.check({
+            totalValue: 'true'
+        })).toBe(false)
     })
 })
+
+describe("DEEP CLONNING OBJECTS: ", () => {
+    const clonner = new ClonningObjects();
+
+    let object = {
+        name: "Ali",
+        age: 20,
+        book: {
+            author: "Tohir Malik",
+            title: "Shaytanat",
+            city: {
+                name: "Tashkent",
+                population: 2545159,
+                region: {
+                    name: "Yunusobod"
+                },
+                regions: ["Olmazor", "Yunusobod", "Mirzo Ulugbek"]
+            },
+            dateOfBirth: {
+                year: 1946,
+                day: 27,
+                month: "december",
+                date: Date("12.27.1946")
+            }
+        },
+        showAuthorRegion() {
+            console.log(this.book.city.region.name)
+        }
+    }
+
+    test("PERSON OBJECT DEEP CLONNED TO OBJECT SUKHROB", () => {
+        expect(clonner.getClone(object)).beEqual();
+    })
+});
