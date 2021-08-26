@@ -9,7 +9,6 @@ function teskariSon(num) {
     number[k] = strNum[i];
     str += number[k];
   }
-  return parseInt(str);
+  return num > 0 ? parseInt(str) : -parseInt(str);
 }
-
 module.exports = teskariSon;
