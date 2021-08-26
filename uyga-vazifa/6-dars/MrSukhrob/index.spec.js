@@ -33,3 +33,39 @@ describe("CHECK PROPERTY OBJECTS: ", () => {
         })).toBe(false)
     })
 })
+
+describe("CALC OBJECT PROPERTIES VALUE: ", () => {
+    const calc = new CalcObjectPropertiesValue();
+
+    const person = {
+        name: "Sukhrob",
+        age: 24,
+        height: 1.5,
+        weight: 60,
+        married: true
+    }
+
+    test("USING FOR IN: person Object", () => {
+        expect(calc.usingForIn(person)).toBe(85.5);
+    })
+
+    test("USING REDUCE FUNCTION: person Object", () => {
+        expect(calc.usingReduseFunction(person)).toBe(85.5);
+    })
+
+    test("USING OBEJSCT.KEYS: person Object", () => {
+        expect(calc.usingReduseFunction(person)).toBe(85.5);
+    })
+
+    test("USING FOR IN {}", () => {
+        expect(calc.usingForIn({})).toBe(0);
+    })
+
+    test("USING REDUCE FUNCTION {}", () => {
+        expect(calc.usingReduseFunction({})).toBe(0);
+    })
+
+    test("USING OBEJSCT.KEYS {}", () => {
+        expect(calc.usingReduseFunction({})).toBe(0);
+    })
+})
