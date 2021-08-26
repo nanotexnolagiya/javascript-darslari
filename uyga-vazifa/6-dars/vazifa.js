@@ -70,7 +70,7 @@
  * shu userni deep clone qiladigan funksiya yarating " for..in " operatorlari orqali!
  * 
  * Masalan: 
- * let user2 = deppClone(user)
+ * let user2 = deepClone(user)
  * user2.book.city.region.name = "Mirobod"
  * 
  * user.showAuthorRegion() => Yunusobod
