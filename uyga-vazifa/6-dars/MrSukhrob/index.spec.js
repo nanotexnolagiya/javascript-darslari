@@ -69,3 +69,20 @@ describe("CALC OBJECT PROPERTIES VALUE: ", () => {
         expect(calc.usingReduseFunction({})).toBe(0);
     })
 })
+
+describe("CHECK OBJECT PROPERTY TOTALVALUE: ", () => {
+    let checkerTotalValue = new CheckObjectPropertyTotalValue();
+
+    test("TOTALVALUE IS: {totalValue: 5} => TRUE", () => {
+        expect(checkerTotalValue.check({totalValue: 5})).toBe(true)
+    })
+    test("TOTALVALUE IS: {totalValue: TRUE} => FALSE", () => {
+        expect(checkerTotalValue.check({totalValue: true})).toBe(false)
+    })
+    test("TOTALVALUE IS: {totalValue: '5'} => TRUE", () => {
+        expect(checkerTotalValue.check({totalValue: '5'})).toBe(true)
+    })
+    test("TOTALVALUE IS: {totalValue: 'true'} => TRUE", () => {
+        expect(checkerTotalValue.check({totalValue: 'true'})).toBe(false)
+    })
+})

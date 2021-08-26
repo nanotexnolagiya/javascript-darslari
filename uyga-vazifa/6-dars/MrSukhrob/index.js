@@ -95,8 +95,42 @@ class CalcObjectPropertiesValue {
     }
 }
 
+class CheckObjectPropertyTotalValue {
+    taskInfo() {
+        /**
+         * 3. 
+         *  Object keylari orasida "totalAmount" keyi bor yoki 
+         * yo'qligini aniqlaydigan funksiya yarating.
+         * Agar qiymati number bo'lsa true qaytaring
+         * agar string bo'lsa numberga o'tkazing va true qaytarsin
+         * agar qiymati numberga o'tmasa yoki yo'q bo'lsa false qaytarsin
+         * 
+         * Masalan:
+         * hasTotalValue({...., totalValue: "1"}) => true
+         * hasTotalValue({...., totalValue: 2}) => true
+         * hasTotalValue({...., totalValue: null}) => false
+         * hasTotalValue({...., totalValue: "ab"}) => false
+         * hasTotalValue({....}) => false
+         * 
+         **/
+    }
+
+    check(object, prop = 'totalValue') {
+        if (!object.hasOwnProperty(prop)) {
+            return false;
+        }
+        if (!Number(object[prop]) || (typeof object[prop] === "boolean")) {
+            return false;
+        }
+
+        return true
+    }
+
+}
+
 
 module.exports = {
     CheckObjectProperty,
-    CalcObjectPropertiesValue
+    CalcObjectPropertiesValue,
+    CheckObjectPropertyTotalValue
 }
