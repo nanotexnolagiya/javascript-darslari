@@ -2,7 +2,7 @@
 
 // Sonni teskarisini topish.
 function teskariSon(num) {
-  let strNum = num.toString();
+  let strNum = String(num);
   let str = "";
   const number = [];
   for (let i = strNum.length - 1, k = 0; i >= 0; i--, k++) {
@@ -11,4 +11,5 @@ function teskariSon(num) {
   }
   return parseInt(str);
 }
-console.log(teskariSon(12345));
+
+module.exports = teskariSon;

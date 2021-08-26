@@ -5,7 +5,7 @@ const takrorlash = (a, b, c) => {
     massiv[i] = a;
     add += massiv[i] + (c || " ");
   }
-  return console.log(add);
+  return add;
 };
 
-takrorlash("salom", 7, ".");
+module.exports = takrorlash;
