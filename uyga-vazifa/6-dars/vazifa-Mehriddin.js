@@ -21,7 +21,7 @@ obj = {
 function totalValue(obj) {
     let total = 0
     for (var value of Object.values(obj)) {
-        if (!isNaN(Number(value))) total += +value
+        if (!isNaN(Number(value))) total += Number(value)
     }
     return total
 }
