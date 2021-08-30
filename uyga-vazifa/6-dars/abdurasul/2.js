@@ -6,4 +6,4 @@ function totalValue(obj) {
    })
    return total
 }
-console.log(totalValue({a: "1", b: 100}));
+module.exports = totalValue

@@ -3,4 +3,5 @@ function isEmpty(obj) {
   if(ownKeyCount>0) return false
   return true
 }
-console.log(isEmpty({'lala':'sas'}));
+
+module.exports = isEmpty

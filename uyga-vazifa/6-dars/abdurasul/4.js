@@ -12,8 +12,9 @@ function deepClone(obj) {
 let friend = {
   name: "Ali",
   age: 21,
+  jobs : {
+    promrammer : true,
+    teacher :false,
+  }
 };
-let user = { name: "John", age: 25, friend: friend };
-let clone = deepClone(user);
-friend.name = "lasdas";
-console.log(clone);
+module.exports = deepClone
