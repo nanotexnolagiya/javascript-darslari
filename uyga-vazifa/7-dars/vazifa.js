@@ -11,4 +11,6 @@
  * To Primitive:
  * string: a, b
  * number: a > b ? a : b
+ * 
+ * Va bu konstruktorimizaga test-lar yozish
  */
