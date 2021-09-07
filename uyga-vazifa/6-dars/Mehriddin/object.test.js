@@ -1,4 +1,4 @@
-const { isEmpty, hasTotalValue, deepClone, totalValue } = require("../../../6-dars/vazifa-Mehriddin")
+const { isEmpty, hasTotalValue, deepClone, totalValue } = require("./vazifa-Mehriddin")
 
 test("object is empty test", () => {
     expect(isEmpty({})).toBeTruthy()

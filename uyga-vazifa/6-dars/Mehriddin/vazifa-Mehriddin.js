@@ -21,7 +21,7 @@ obj = {
 function totalValue(obj) {
     let total = 0
     for (var value of Object.values(obj)) {
-        if (!isNaN(Number(value))) total += Number(value)
+        if (!isNaN(parseInt(value))) total += Number(value)
     }
     return total
 }
@@ -36,7 +36,6 @@ obj = {
     totalValue: "2"
 }
 
-// Qiziq holat parseInt("2g") 2 qaytaradi, parseInt("g2") NaN qaytaradi
 
 function hasTotalValue(obj) {
     return "totalValue" in obj && !isNaN(Number(obj["totalValue"]))
