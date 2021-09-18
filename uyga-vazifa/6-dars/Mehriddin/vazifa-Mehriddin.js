@@ -72,18 +72,31 @@ obj = {
     }
 }
 
+
 function deepClone(obj) {
-    let newObj = {}
-    for(key in obj){
-        typeof obj[key] == "object" ? newObj[key] = deepClone(obj[key]) : newObj[key] = obj[key]
+    let newObj = {};
+    if (Array.isArray(obj)) {
+        newObj = []
+        obj.forEach(item => {
+            typeof item == "object" ? newObj.push(deepClone(item)) : newObj.push(item);
+        })
+    } else {
+        for (key in obj) {
+            typeof obj[key] == "object" ? newObj[key] = deepClone(obj[key]) : newObj[key] = obj[key]
+        }
     }
+
     return newObj
 }
 
 // clone = deepClone(obj)
+// console.log(clone)
 // clone.book.city.region.name = "Beruniy"
+// clone.book.city.regions.pop()
 // console.log(clone.book.city.region.name)
 // console.log(obj.book.city.region.name)
+// console.log(clone.book.city.regions)
+// console.log(obj.book.city.regions)
 
 
 module.exports = {

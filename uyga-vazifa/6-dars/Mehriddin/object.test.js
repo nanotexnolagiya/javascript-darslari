@@ -73,5 +73,7 @@ test("object deep clone test", () => {
     clone = deepClone(obj)
     expect(clone.book.city.region.name).toEqual(obj.book.city.region.name)
     clone.book.city.region.name = "Oqtepa"
+    clone.book.city.regions.pop()
     expect(clone.book.city.region.name).not.toEqual(obj.book.city.region.name)
+    expect(clone.book.city.regions.length).not.toEqual(obj.book.city.regions.length)
 })
