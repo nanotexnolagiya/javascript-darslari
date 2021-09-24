@@ -1,6 +1,5 @@
 const {deepClone} = require("../../6-dars/Mehriddin/vazifa-Mehriddin")
 
-// savol obj.arr[0] bo`lganda nima qilish kerak?
 function changeArrInd(array){
     array = new Proxy(array, {
         get: function (arr, i) {
@@ -10,7 +9,6 @@ function changeArrInd(array){
     });
     return array
 }
-
 
 function extendConstructor(child, parent){
     child = deepClone(child)
