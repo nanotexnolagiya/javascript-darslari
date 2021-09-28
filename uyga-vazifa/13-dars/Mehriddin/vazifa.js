@@ -8,14 +8,14 @@ function findArr(arr, cb){
 }
 
 function mapArr(arr, cb){
+    let narr = []
     function loop(i){
         if(i >= arr.length) return undefined;
-        let res = cb(arr[i], i, arr)
-        if(res) arr[i] = res;
+        narr.push(cb(arr[i], i, arr))
         loop(i+1)
     }
     loop(0)
-    return arr
+    return narr
 }
 
 module.exports = {
