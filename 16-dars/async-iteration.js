@@ -5,7 +5,7 @@ let range = {
   from: 1,
   to: 10,
 
-  // [Symbol.iterator]() {
+  // [Symbol.asyncIterator]() {
   //   return {
   //     current: this.from,
   //     last: this.to,
@@ -22,8 +22,9 @@ let range = {
   //   };
   // }
 
-  *[Symbol.iterator]() {
+  async *[Symbol.asyncIterator]() {
     for(let value = this.from; value <= this.to; value++) {
+      await sleep(1000)
       yield value;
     }
   }
@@ -34,8 +35,9 @@ let range = {
  * is done
  * return value
  */
-(() => {
-  for (let value of range) { // for of
+(async () => {
+  
+  for await (let value of range) { // for of
     console.log(value);
   }
 })()
